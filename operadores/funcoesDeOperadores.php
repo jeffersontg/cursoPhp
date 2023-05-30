@@ -7,7 +7,7 @@ function executaSoma($parametro1, $parametro2){
 }
 
 function executaMultiplicacao($parametro1, $parametro2){
-    echo "Executando a multiplicaçãoo dos parametros $parametro1 e $parametro2: ";
+    echo "Executando a multiplicação dos parametros $parametro1 e $parametro2: ";
     echo $parametro1 * $parametro2;
     echo "<br>";
 }
