@@ -33,4 +33,10 @@ echo '<br>';
 $variavel1 = "5" . "3";
 echo 'Agora o valor da $variavel1 é: ' . $variavel1;
 
+
+echo '<br>';
+$arr = "nome";
+$var = (array)$arr;
+echo '$var é: ' . $var[0];
+
 ?>
