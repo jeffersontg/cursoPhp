@@ -5,20 +5,10 @@
     </head>
     <body> <!-- Determina o inicio do corpo do documento   -->
         <h1> Teste com Form! </h1>
-
-        <!DOCTYPE html>
-        <html>
-          <head>
-          </head>
-        
-          <body>
-            <form method=GET action='https://www.google.com/search' target='_blank' >
-              <input type='text' value='' name='nome' placeholder="Nome">
-              <input type='text' value='' name='endereco' placeholder="Endereço">
-              <input type='submit' value='googlar' >
-            </form>
-          </body>
-        </html>
-
+        <form method="POST" action='resultadoOperacaoForm.php' >
+          <input type='text' value='' name='nome' placeholder="Nome"><br>
+          <input type='text' value='' name='endereco' placeholder="Endereço"><br>
+          <input type='submit' value='Enviar' >
+        </form>
     </body>
 </html>
