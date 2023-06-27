@@ -1,29 +1,29 @@
-<?php
-    $dados = [
-        'nome' => 'Alfredo',
-        'endereco' => 'Rua das Flores, 141',
-        'bairro' => 'Bairro Novo',
-        'cidade' => 'Cidade Nova',
-        'cep' => '60000000'
-    ]
-?>
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Teste de preenchimento de formulário</title>
+    <title>Document</title>
 </head>
 <body>
+
     <?php 
-        
-        if (isset($dados["nome"])){
-            $nome = $dados["nome"];
-            $endereco = $dados["endereco"];
-            $bairro = $dados["bairro"];
-            $cidade = $dados["cidade"];
-            $cep = $dados["cep"];
+        $validacoes = [];
+        if (isset($_POST["nome"])){
+            if  ($_POST["nome"] === "") {
+                $validacoes[] = "O nome não pode ser vazio!";
+            }
+
+            if  ($_POST["endereco"] === "") {
+                $validacoes[] = "O endereco não pode ser vazio!";
+            }
+
+            $nome = $_POST["nome"];
+            $endereco = $_POST["endereco"];
+            $bairro = $_POST["bairro"];
+            $cidade = $_POST["cidade"];
+            $cep = $_POST["cep"];
         } else {
             $nome = '';
             $endereco = '';
@@ -32,8 +32,17 @@
             $cep = '';
         }
     ?>
+    <?php if (count($_POST) > 0 ): ?>
+    <ul>
+       <?php foreach($validacoes as $validacao): ?>
+            <li> <?= $validacao ?> </li>
+       <?php endforeach; ?> 
+    <ul>   
+    <?php endif;  ?>
 
-    <form method='POST' action='preenchendoFormularios.php'>
+    <br>
+    
+    <form method='POST' action='validacaoFormulario.php'>
         <div>
             <input type="text" name="nome" placeholder="Nome" value="<?= $nome ?>" />
         </div>
@@ -52,6 +61,7 @@
 
         <input type="submit" value="Enviar"/>
     </form>
+
 
 </body>
 </html>
