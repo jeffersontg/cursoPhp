@@ -10,7 +10,7 @@
         ?>
         <h1> Resultado! </h1>
 
-        <h2> Via metodo: <?= $metodo ?> </h2>
+        <h2> Via método: <?= $metodo ?> </h2>
 
         <?php
             if ($metodo=='GET'):

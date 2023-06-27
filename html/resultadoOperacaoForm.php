@@ -12,8 +12,10 @@
             if ($metodo=="GET"){
 
                 $nome = $_GET['nome'];
+                $endereco = $_GET['endereco'];
             } else {
                 $nome = $_POST['nome'];
+                $endereco = $_POST['endereco'];
             }
 
         ?>
@@ -23,7 +25,7 @@
         <h2> <?= $metodo ?></h2>
         
         <h3>Nome: <?= $nome ?> </h3> 
-        <h3>Endereço: <?= $_GET["endereco"] ?> </h3>
+        <h3>Endereço: <?= $endereco ?> </h3>
         <h3>Bairro: <?= $_GET["bairro"] ?> </h3> 
         <h3>Cidade: <?= $_GET["cidade"] ?> </h3> 
         <h3>Estado: <?= $_GET["estado"] ?> </h3>
@@ -40,8 +42,8 @@
                 <th>Cep</th>
             </tr>
             <tr>
-                <td> <?= $_GET["nome"] ?> </td>
-                <td><?= $_GET["endereco"] ?> </td>
+                <td> <?= $nome ?> </td>
+                <td><?= $endereco ?> </td>
                 <td> <?= $_GET["bairro"] ?> </td> 
                 <td> <?= $_GET["cidade"] ?> </td> 
                 <td> <?= $_GET["estado"] ?> </td>
