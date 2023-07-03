@@ -19,6 +19,10 @@
                 $validacoes[] = "O endereco não pode ser vazio!";
             }
 
+            if  ($_POST["cidade"] === "") {
+                $validacoes[] = "A cidade não pode ser vazia!";
+            }            
+
             $nome = $_POST["nome"];
             $endereco = $_POST["endereco"];
             $bairro = $_POST["bairro"];
