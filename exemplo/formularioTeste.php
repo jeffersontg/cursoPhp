@@ -28,6 +28,10 @@
           <p>Email</p>
           <input type="text" name="email"/>
         </div>
+        <div class="item">
+          <p>CPF</p>
+          <input type="text" name="CPF"/>
+        </div>        
         <div class="btn-block">
           <button type="submit" href="/">Enviar</button>
         </div>

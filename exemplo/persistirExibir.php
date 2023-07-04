@@ -7,7 +7,7 @@
 
     // Abrir arquivo para leitura
     $f = fopen('persistencia.csv', 'r'); //read -> significa LER
-    if ($f) { 
+    if ($f) { // Se leitura foi feita corretamente e o arquivo existe
 
 
         // Enquanto nao terminar o arquivo
@@ -20,7 +20,7 @@
             }
 
             // Montar registro com valores indexados pelo cabecalho
-            $registros[] = [$linha[0], $linha[1], $linha[2] ];
+            $registros[] = [$linha[0], $linha[1], $linha[2] , $linha[3]];
 
         }
         fclose($f);
@@ -30,15 +30,20 @@
 
     if ( count($_POST) > 0 ) {
 
-        $registros[] = [ $_POST['nome'], $_POST['dataNascimento'] , $_POST['email'] ];
+        $registros[] = [ $_POST['nome'], $_POST['dataNascimento'] , $_POST['email'] , $_POST['cpf']];
         
-        $f = fopen('persistencia.csv', 'w');
-        if ($f) { 
+        $f = fopen('persistencia.csv', 'w'); // agora em formato de escrita ou gravação
+
+        //fputcsv($f, array( $_POST['nome'], $_POST['dataNascimento'] , $_POST['email'] ) , $delimitador, $cerca);        
+
+       if ($f) { 
             foreach ($registros as $registro) {
                 fputcsv($f, $registro, $delimitador, $cerca);
             }
             fclose($f);
         }
+        
+
 
     }
 
@@ -63,6 +68,7 @@
             <th>Nome</th>
             <th>Data Nascimento</th>
             <th>Email</th>
+            <th>CPF</th>
         </tr>
         <?php foreach($registros as $registro): ?>
             <tr>
@@ -70,6 +76,7 @@
                 <td> <?= $registro[0] ?> </td>
                 <td> <?= $registro[1] ?> </td>
                 <td> <?= $registro[2] ?> </td>
+                <td> <?= $registro[3] ?> </td>
             </tr>    
                 
         <?php endforeach; ?> 
